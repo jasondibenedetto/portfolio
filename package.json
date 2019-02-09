@@ -27,7 +27,9 @@
     "develop": "gatsby develop",
     "start": "npm run develop",
     "format": "prettier --write \"src/**/*.js\"",
-    "now-build": "npm run build"
+    "now-build": "npm run build",
+    "now": "now",
+    "now:redirect": "now --local-config now-redirect.json"
   },
   "devDependencies": {
     "now": "^13.1.3",
