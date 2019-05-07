@@ -30,23 +30,24 @@ const Heading = styled.h2`
   font-family: 'Merriweather', serif;
   color: ${palette.dark};
   font-weight: 700;
-  font-size: 4rem;
+  font-size: 3rem;
   text-transform: uppercase;
   letter-spacing: 0.3rem;
-  text-shadow: 0.2rem 0.2rem 0rem ${palette.gray},
-    0.4rem 0.4rem 0rem ${transparentize(0.8, palette.dark)};
-  text-align: center;
-
-  ${media.lessThan('medium')`
-    font-size: 3rem;
-    text-shadow: 0.2rem 0.2rem 0rem ${palette.gray},
-      0.1rem 0.1rem 0rem ${transparentize(0.8, palette.dark)};
-  `}
+  text-shadow: 0.1rem 0.1rem 0rem ${palette.gray},
+    0.2rem 0.2rem 0rem ${transparentize(0.8, palette.dark)};
+  margin-bottom: 2rem;
+  margin-top: 2rem;
 
   ${media.lessThan('small')`
-    margin-bottom: 3rem;
     font-size: 1.8rem;
   `}
+`;
+
+const Emoji = styled.span.attrs({
+  role: 'img',
+  ariaLabel: 'Wave'
+})`
+  font-size: 1rem;
 `;
 
 const PreHeading = styled.h1`
@@ -54,8 +55,7 @@ const PreHeading = styled.h1`
   font-weight: 700;
   font-size: 0.85rem;
   color: ${palette.darkGray};
-  text-align: center;
-  line-height: 1.5;
+  line-height: 2;
 
   ${media.lessThan('medium')`
     font-size: 0.7rem;
@@ -67,7 +67,6 @@ const PostHeading = styled.h1`
   font-weight: 700;
   font-size: 1.2rem;
   color: ${palette.dark};
-  text-align: center;
 
   ${media.lessThan('small')`
     font-size: 1rem;
@@ -79,7 +78,7 @@ const Line = styled.hr`
   height: 0;
   border-top: 0.08rem solid ${transparentize(0.9, palette.dark)};
   margin-bottom: 2rem;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 `;
 
 const Link = styled.a`
@@ -97,7 +96,6 @@ const Link = styled.a`
 
 const Paragraph = styled.p`
   line-height: 1.5;
-  text-align: center;
 
   ${media.lessThan('small')`
     font-size: 1.1rem;
@@ -105,9 +103,6 @@ const Paragraph = styled.p`
 `;
 
 const Footer = styled.div`
-  margin-top: auto;
-  text-align: center;
-
   ${Link} {
     font-size: 0.9rem;
   }
@@ -121,13 +116,8 @@ const IndexPage = () => (
     <Wrapper>
       <Container>
         <Inner>
-          <Line />
           <PreHeading>
-            Hello{' '}
-            <span role="img" aria-label="Wave">
-              👋
-            </span>{' '}
-            This is the intro text to the landing page for the website of
+            <Emoji>👋</Emoji>&nbsp;hello. i am&hellip;
           </PreHeading>
           <Heading>Jason&nbsp;Di Benedetto</Heading>
           <PostHeading>I write code.</PostHeading>
@@ -136,12 +126,13 @@ const IndexPage = () => (
             <Link href="https://github.com/jasondibenedetto">GitHub</Link> and{' '}
             <Link href="https://twitter.com/jasondbenedetto">Twitter</Link>.
           </Paragraph>
+          <Line />
+          <Footer>
+            <Link href="mailto:jason.dibenedetto6@gmail.com">
+              jason.dibenedetto6@gmail.com
+            </Link>
+          </Footer>
         </Inner>
-        <Footer>
-          <Link href="mailto:jason.dibenedetto6@gmail.com">
-            jason.dibenedetto6@gmail.com
-          </Link>
-        </Footer>
       </Container>
     </Wrapper>
   </Layout>

@@ -11,5 +11,6 @@
       }
     }
   ],
-  "alias": ["dibenedetto.fyi", "jason.dibenedetto.fyi"]
+  "alias": ["dibenedetto.fyi", "jason.dibenedetto.fyi"],
+  "regions": ["syd"]
 }
