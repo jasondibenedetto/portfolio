@@ -22,7 +22,7 @@ const Wrapper = styled.div`
   height: 100vh;
   padding: 1rem;
   justify-content: center;
-  animation: ${fadeIn} 1s linear;
+  animation: ${fadeIn} 3s linear;
 `;
 
 const Container = styled.div`
