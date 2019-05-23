@@ -1,10 +1,20 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import media from 'styled-media-query';
 import { transparentize } from 'polished';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { palette } from '../constants';
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}`;
 
 const Wrapper = styled.div`
   display: flex;
@@ -12,6 +22,7 @@ const Wrapper = styled.div`
   height: 100vh;
   padding: 1rem;
   justify-content: center;
+  animation: ${fadeIn} 1s linear;
 `;
 
 const Container = styled.div`
@@ -27,34 +38,27 @@ const Container = styled.div`
 `;
 
 const Heading = styled.h2`
-  font-family: 'Merriweather', serif;
-  color: ${palette.dark};
-  font-weight: 700;
-  font-size: 3rem;
-  text-transform: uppercase;
+  color: ${palette.light};
+  font-size: 2.5rem;
+  text-transform: lowercase;
   letter-spacing: 0.3rem;
-  text-shadow: 0.1rem 0.1rem 0rem ${palette.gray},
-    0.2rem 0.2rem 0rem ${transparentize(0.8, palette.dark)};
-  margin-bottom: 2rem;
-  margin-top: 2rem;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+  font-weight: 400;
 
   ${media.lessThan('small')`
     font-size: 1.8rem;
   `}
 `;
 
-const Emoji = styled.span.attrs({
-  role: 'img',
-  ariaLabel: 'Wave'
-})`
+const Emoji = styled.span`
   font-size: 1rem;
 `;
 
 const PreHeading = styled.h1`
-  font-family: 'Merriweather', serif;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 0.85rem;
-  color: ${palette.darkGray};
+  color: ${palette.gray};
   line-height: 2;
 
   ${media.lessThan('medium')`
@@ -63,10 +67,9 @@ const PreHeading = styled.h1`
 `;
 
 const PostHeading = styled.h1`
-  font-family: 'Merriweather', serif;
-  font-weight: 700;
-  font-size: 1.2rem;
-  color: ${palette.dark};
+  font-weight: 400;
+  font-size: 1.4rem;
+  color: ${palette.light};
 
   ${media.lessThan('small')`
     font-size: 1rem;
@@ -76,9 +79,9 @@ const PostHeading = styled.h1`
 const Line = styled.hr`
   border: 0;
   height: 0;
-  border-top: 0.08rem solid ${transparentize(0.9, palette.dark)};
+  border-top: 0.08rem solid ${transparentize(0.7, palette.gray)};
   margin-bottom: 2rem;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
 `;
 
 const Link = styled.a`
@@ -96,15 +99,16 @@ const Link = styled.a`
 
 const Paragraph = styled.p`
   line-height: 1.5;
+  font-size: 0.9rem;
 
   ${media.lessThan('small')`
-    font-size: 1.1rem;
+    font-size: 0.7rem;
   `}
 `;
 
 const Footer = styled.div`
   ${Link} {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
   }
 `;
 
@@ -117,9 +121,12 @@ const IndexPage = () => (
       <Container>
         <Inner>
           <PreHeading>
-            <Emoji>👋</Emoji>&nbsp;hello. i am&hellip;
+            <Emoji role="img" aria-label="Wave">
+              👋
+            </Emoji>
+            &nbsp;hello. i am&hellip;
           </PreHeading>
-          <Heading>Jason&nbsp;Di Benedetto</Heading>
+          <Heading>Jason Di&nbsp;Benedetto</Heading>
           <PostHeading>I write code.</PostHeading>
           <Paragraph>
             I can be found on{' '}
