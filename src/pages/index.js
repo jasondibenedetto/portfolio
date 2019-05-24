@@ -62,7 +62,7 @@ const PreHeading = styled.h1`
   line-height: 2;
 
   ${media.lessThan('medium')`
-    font-size: 0.7rem;
+    font-size: 0.75rem;
   `}
 `;
 
