@@ -102,13 +102,13 @@ const Paragraph = styled.p`
   font-size: 0.9rem;
 
   ${media.lessThan('small')`
-    font-size: 0.7rem;
+    font-size: 0.75rem;
   `}
 `;
 
 const Footer = styled.div`
   ${Link} {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
   }
 `;
 
