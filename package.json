@@ -15,7 +15,7 @@
     "gatsby-transformer-sharp": "^2.1.19",
     "polished": "^3.3.0",
     "react": "^16.11.0",
-    "react-dom": "^16.8.6",
+    "react-dom": "^16.11.0",
     "react-helmet": "^5.2.1",
     "styled-components": "^4.4.1",
     "styled-media-query": "^2.1.1",
