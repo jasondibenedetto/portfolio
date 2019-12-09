@@ -32,7 +32,7 @@
     "now:redirect": "now --local-config now-redirect.json"
   },
   "devDependencies": {
-    "now": "^16.5.2",
+    "now": "^16.6.3",
     "prettier": "^1.19.1"
   },
   "prettier": {
