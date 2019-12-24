@@ -1,10 +1,8 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import media from 'styled-media-query';
 import { transparentize } from 'polished';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import { palette } from '../constants';
 
 const fadeIn = keyframes`
   from {
@@ -17,98 +15,107 @@ const fadeIn = keyframes`
 }`;
 
 const Wrapper = styled.div`
+  animation: ${fadeIn} 2s linear;
   display: flex;
-  margin: auto;
   height: 100vh;
-  padding: 1rem;
   justify-content: center;
-  animation: ${fadeIn} 3s linear;
+  margin: auto;
+  padding: 1rem;
 `;
 
 const Container = styled.div`
-  width: 100%;
-  max-width: 40rem;
-  padding: 1rem;
   display: flex;
   flex-direction: column;
+  max-width: 40rem;
+  padding: 1rem;
+  width: 100%;
 
-  ${media.lessThan('medium')`
-    max-width: 32rem;
+  ${({ theme }) => `
+    ${theme.breakpoints.medium} {
+      max-width: 32rem;
+    }
   `}
 `;
 
-const Heading = styled.h2`
-  color: ${palette.light};
-  font-size: 2.5rem;
-  text-transform: lowercase;
-  letter-spacing: 0.3rem;
-  margin-bottom: 3rem;
-  margin-top: 3rem;
+const Text = styled.p`
+  font-size: 1.1rem;
   font-weight: 400;
 
-  ${media.lessThan('small')`
-    font-size: 1.8rem;
+  ${({ theme }) => `
+    ${theme.breakpoints.medium} {
+      font-size: 0.9rem;
+    }
+  `}
+`;
+
+const Heading = styled.h1`
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+
+  ${({ theme }) => `
+    ${theme.breakpoints.medium} {
+      font-size: 1.5rem;
+    }
   `}
 `;
 
 const Emoji = styled.span`
-  font-size: 1rem;
-`;
+  font-size: 1.5rem;
+  font-style: normal;
+  margin-right: 0.5rem;
 
-const PreHeading = styled.h1`
-  font-weight: 400;
-  font-size: 0.85rem;
-  color: ${palette.gray};
-  line-height: 2;
-
-  ${media.lessThan('medium')`
-    font-size: 0.75rem;
+  ${({ theme }) => `
+    ${theme.breakpoints.medium} {
+      font-size: 1rem;
+    }
   `}
 `;
 
-const PostHeading = styled.h1`
+const PreHeading = styled.h2`
+  font-size: 0.9rem;
+  font-style: italic;
   font-weight: 400;
-  font-size: 1.4rem;
-  color: ${palette.light};
+  margin-bottom: 1rem;
 
-  ${media.lessThan('small')`
-    font-size: 1rem;
+  ${({ theme }) => `
+    ${theme.breakpoints.medium} {
+      font-size: 0.75rem;
+    }
   `}
+`;
+
+const PostHeading = styled(Text).attrs({ as: 'h3' })`
+  line-height: 1.5;
 `;
 
 const Line = styled.hr`
   border: 0;
+  border-top: 0.08rem solid
+    ${({ theme }) => transparentize(0.7, theme.colors.line)};
   height: 0;
-  border-top: 0.08rem solid ${transparentize(0.7, palette.gray)};
   margin-bottom: 2rem;
   margin-top: 2rem;
 `;
 
-const Link = styled.a`
-  color: ${palette.highlight};
-  text-decoration: none;
-  transition: border 300ms ease-in-out;
-  border-bottom: 0.09rem solid transparent;
+const Link = styled(Text).attrs({ as: 'a' })`
+  border-bottom: 1px solid
+    ${({ theme }) => transparentize(0.8, theme.colors.text)};
+  transition: background-color 300ms ease-in-out;
 
   &:hover,
   &:focus,
   &:active {
-    border-bottom: 0.09rem solid ${transparentize(0.4, palette.highlight)};
+    background-color: ${({ theme }) =>
+      transparentize(0.5, theme.colors.highlight)};
   }
 `;
 
-const Paragraph = styled.p`
-  line-height: 1.5;
-  font-size: 0.9rem;
+const List = styled.ul`
+  padding-left: 1rem;
 
-  ${media.lessThan('small')`
-    font-size: 0.75rem;
-  `}
-`;
-
-const Footer = styled.div`
-  ${Link} {
-    font-size: 0.75rem;
+  li {
+    margin-bottom: 1rem;
   }
 `;
 
@@ -121,24 +128,42 @@ const IndexPage = () => (
       <Container>
         <Inner>
           <PreHeading>
-            <Emoji role="img" aria-label="Wave">
-              👋
+            <Emoji>
+              <span role="img" aria-label="Wave">
+                👋
+              </span>
             </Emoji>
-            &nbsp;hello. i am&hellip;
+            Hello. I am&hellip;
           </PreHeading>
           <Heading>Jason Di&nbsp;Benedetto</Heading>
-          <PostHeading>I write code.</PostHeading>
-          <Paragraph>
-            I can be found on{' '}
-            <Link href="https://github.com/jasondibenedetto">GitHub</Link> and{' '}
-            <Link href="https://twitter.com/jasondbenedetto">Twitter</Link>.
-          </Paragraph>
+          <PostHeading>
+            Programmer, coffee enthusiast, board game lover. Senior Software
+            Engineer at{' '}
+            <Link href="https://mangochutney.com.au">Mango Chutney</Link>.
+            Co-Founder and Game Designer at{' '}
+            <Link href="https://bluemoon.games">Blue Moon Games</Link>.
+          </PostHeading>
           <Line />
-          <Footer>
-            <Link href="mailto:jason.dibenedetto6@gmail.com">
-              jason.dibenedetto6@gmail.com
-            </Link>
-          </Footer>
+          <List>
+            <li>
+              <Link href="https://github.com/jasondibenedetto">GitHub</Link>
+            </li>
+            <li>
+              <Link href="https://twitter.com/jasondbenedetto">Twitter</Link>
+            </li>
+            <li>
+              <Link href="https://linkedin.com/in/jasondibenedetto">
+                LinkedIn
+              </Link>
+            </li>
+            <li>
+              <Link href="mailto:jason.dibenedetto6@gmail.com">Email</Link>
+            </li>
+          </List>
+          <Line />
+          <Link href="https://github.com/jasondibenedetto/portfolio">
+            View Source
+          </Link>
         </Inner>
       </Container>
     </Wrapper>

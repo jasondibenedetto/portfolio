@@ -1,44 +1,48 @@
 import React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { Normalize } from 'styled-normalize';
-import { palette } from '../constants';
 
 const GlobalStyle = createGlobalStyle`
   body {
-    font-family: 'Inconsolata', monospace;
-    background-color: ${palette.dark};
-    color: ${palette.light};
-    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    background-color: ${({ theme }) => theme.colors.background};
+    color: ${({ theme }) => theme.colors.text};
+    font-size: 16px;
     font-weight: 400;
-    line-height: 1.15;
-    letter-spacing: 0.1rem;
+    line-height: 1.1;
+  }
 
-    * {
-      box-sizing: border-box;
-    }
+  * {
+    box-sizing: border-box;
+  }
+
+  a {
+    color: ${({ theme }) => theme.colors.text};
+    text-decoration: none;
   }
 `;
 
 const Layout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
+  <ThemeProvider
+    theme={{
+      colors: {
+        background: '#fff',
+        text: '#17171a',
+        highlight: '#f2cba2',
+        line: '#a3acbf'
+      },
+      breakpoints: {
+        small: '@media (max-width: 480px)',
+        medium: '@media (max-width: 768px)'
       }
-    `}
-    render={data => (
-      <>
-        <Normalize />
-        <GlobalStyle />
-        {children}
-      </>
-    )}
-  />
+    }}
+  >
+    <>
+      <Normalize />
+      <GlobalStyle />
+      {children}
+    </>
+  </ThemeProvider>
 );
 
 export default Layout;
