@@ -3,7 +3,8 @@
   font-style: normal;
   font-weight: 400;
   font-display: optional;
-  src: url('/fonts/Inter-Regular.otf');
+  src: url('/fonts/Inter-Regular.woff2') format('woff2'),
+    url('/fonts/Inter-Regular.woff') format('woff');
 }
 
 @font-face {
@@ -11,7 +12,8 @@
   font-style: normal;
   font-weight: 600;
   font-display: optional;
-  src: url('/fonts/Inter-SemiBold.otf');
+  src: url('/fonts/Inter-SemiBold.woff2') format('woff2'),
+    url('/fonts/Inter-SemiBold.woff') format('woff');
 }
 
 @font-face {
@@ -19,5 +21,6 @@
   font-style: italic;
   font-weight: 400;
   font-display: optional;
-  src: url('/fonts/Inter-Italic.otf');
+  src: url('/fonts/Inter-Italic.woff2') format('woff2'),
+    url('/fonts/Inter-Italic.woff') format('woff');
 }
