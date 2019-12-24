@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
-  "private": true,
   "version": "0.1.0",
+  "license": "UNLICENSED",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.6",
     "gatsby": "^2.5.5",
@@ -20,7 +20,10 @@
     "styled-components": "^4.4.1",
     "styled-normalize": "^8.0.6"
   },
-  "license": "UNLICENSED",
+  "devDependencies": {
+    "now": "^16.7.0",
+    "prettier": "^1.19.1"
+  },
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -29,16 +32,12 @@
     "now-build": "npm run build",
     "now": "now"
   },
-  "devDependencies": {
-    "now": "^16.7.0",
-    "prettier": "^1.19.1"
+  "engines": {
+    "node": "12.x"
   },
   "prettier": {
     "singleQuote": true,
     "semi": true,
     "trailingComma": "none"
-  },
-  "engines": {
-    "node": "12.x"
   }
 }
