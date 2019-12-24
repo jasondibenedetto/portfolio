@@ -11,6 +11,10 @@
       }
     }
   ],
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "status": 404, "dest": "/index.html" }
+  ],
   "alias": ["dibenedetto.fyi", "jason.dibenedetto.fyi"],
   "regions": ["syd"]
 }
