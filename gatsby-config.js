@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Jason Di Benedetto`,
     author: `Jason Di Benedetto`,
-    description: `Jason Di Benedetto`
+    description: `Software Engineer based in Adelaide, Australia.`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
