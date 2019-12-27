@@ -98,7 +98,7 @@ const Line = styled.hr`
   margin-top: 2rem;
 `;
 
-const Link = styled(Text).attrs({ as: 'a' })`
+const Link = styled(Text).attrs({ as: 'a' })<{ href: string }>`
   border-bottom: 1px solid
     ${({ theme }) => transparentize(0.8, theme.colors.text)};
   transition: background-color 300ms ease-in-out;

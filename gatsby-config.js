@@ -32,6 +32,7 @@ module.exports = {
       options: {
         displayName: false
       }
-    }
+    },
+    `gatsby-plugin-typescript`
   ]
 };

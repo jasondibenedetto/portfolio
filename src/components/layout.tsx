@@ -22,7 +22,11 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const Layout = ({ children }) => (
+interface Props {
+  children: React.ReactNode;
+}
+
+const Layout = ({ children }: Props) => (
   <ThemeProvider
     theme={{
       colors: {

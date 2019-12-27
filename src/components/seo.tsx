@@ -2,13 +2,34 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 
-const SEO = ({ description, lang, meta, keywords, title }) => {
+const detailsQuery = graphql`
+  query DefaultSEOQuery {
+    site {
+      siteMetadata {
+        title
+        description
+        author
+      }
+    }
+  }
+`;
+
+interface Props {
+  description?: string;
+  lang: string;
+  meta: any[];
+  title: string;
+  keywords: string[];
+}
+
+const SEO = ({ description, lang, meta, keywords, title }: Props) => {
   return (
     <StaticQuery
       query={detailsQuery}
       render={data => {
         const metaDescription =
           description || data.site.siteMetadata.description;
+
         return (
           <Helmet
             htmlAttributes={{
@@ -48,17 +69,17 @@ const SEO = ({ description, lang, meta, keywords, title }) => {
               {
                 name: `twitter:description`,
                 content: metaDescription
-              }
-            ]
-              .concat(
-                keywords.length > 0
-                  ? {
+              },
+              ...(keywords.length > 0
+                ? [
+                    {
                       name: `keywords`,
                       content: keywords.join(`, `)
                     }
-                  : []
-              )
-              .concat(meta)}
+                  ]
+                : []),
+              ...meta
+            ]}
           />
         );
       }}
@@ -73,15 +94,3 @@ SEO.defaultProps = {
 };
 
 export default SEO;
-
-const detailsQuery = graphql`
-  query DefaultSEOQuery {
-    site {
-      siteMetadata {
-        title
-        description
-        author
-      }
-    }
-  }
-`;
