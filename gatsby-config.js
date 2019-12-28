@@ -2,7 +2,9 @@ module.exports = {
   siteMetadata: {
     title: `Jason Di Benedetto`,
     author: `Jason Di Benedetto`,
-    description: `Software Engineer based in Adelaide, Australia.`
+    description: `Software Engineer based in Adelaide, Australia.`,
+    image: '/images/og.jpg',
+    url: 'https://jason.dibenedetto.fyi'
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

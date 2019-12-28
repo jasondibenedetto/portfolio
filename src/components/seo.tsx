@@ -7,8 +7,10 @@ const detailsQuery = graphql`
     site {
       siteMetadata {
         title
-        description
         author
+        description
+        image
+        url
       }
     }
   }
@@ -43,6 +45,10 @@ const SEO = ({ description, lang, meta, keywords, title }: Props) => {
                 content: metaDescription
               },
               {
+                name: 'author',
+                content: data.site.siteMetadata.author
+              },
+              {
                 property: `og:title`,
                 content: title
               },
@@ -53,6 +59,18 @@ const SEO = ({ description, lang, meta, keywords, title }: Props) => {
               {
                 property: `og:type`,
                 content: `website`
+              },
+              {
+                property: 'og:url',
+                content: data.site.siteMetadata.url
+              },
+              {
+                property: 'og:image',
+                content: `${data.site.siteMetadata.url}${data.site.siteMetadata.image}`
+              },
+              {
+                property: 'og:site_name',
+                content: data.site.siteMetadata.title
               },
               {
                 name: `twitter:card`,
@@ -79,6 +97,12 @@ const SEO = ({ description, lang, meta, keywords, title }: Props) => {
                   ]
                 : []),
               ...meta
+            ]}
+            link={[
+              {
+                rel: 'canonical',
+                href: data.site.siteMetadata.url
+              }
             ]}
           />
         );
