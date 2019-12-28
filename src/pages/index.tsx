@@ -137,7 +137,7 @@ const IndexPage = () => (
           </PreHeading>
           <Heading>Jason Di&nbsp;Benedetto</Heading>
           <PostHeading>
-            Programmer, coffee enthusiast, board game lover. Senior Software
+            Programmer, coffee enthusiast, board game lover. Lead Software
             Engineer at{' '}
             <Link href="https://mangochutney.com.au">Mango Chutney</Link>.
             Co-Founder and Game Designer at{' '}
