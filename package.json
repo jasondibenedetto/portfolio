@@ -29,7 +29,7 @@
     "gatsby-plugin-typescript": "^2.1.23",
     "now": "^16.7.0",
     "prettier": "^2.7.1",
-    "typescript": "^3.7.4"
+    "typescript": "^4.8.4"
   },
   "scripts": {
     "build": "gatsby build",
