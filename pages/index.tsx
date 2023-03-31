@@ -101,7 +101,7 @@ const Home: NextPage = () => {
                 <span className="mx-2 flex-1 border-b border-dotted border-gray/50 sm:mx-4" />
                 <span className="mr-4 text-sm font-light text-gray">Web</span>
                 <span className="w-16 font-mono text-sm font-light text-gray-dark">
-                  2023
+                  2023&ndash;
                 </span>
               </a>
               <a
@@ -116,7 +116,7 @@ const Home: NextPage = () => {
                 <span className="mx-2 flex-1 border-b border-dotted border-gray/50 sm:mx-4" />
                 <span className="mr-4 text-sm font-light text-gray">Web</span>
                 <span className="w-16 font-mono text-sm font-light text-gray-dark">
-                  2022
+                  2022&ndash;
                 </span>
               </a>
               <a
@@ -131,7 +131,7 @@ const Home: NextPage = () => {
                 <span className="mx-2 flex-1 border-b border-dotted border-gray/50 sm:mx-4" />
                 <span className="mr-4 text-sm font-light text-gray">App</span>
                 <span className="w-16 font-mono text-sm font-light text-gray-dark">
-                  2022
+                  2022&ndash;
                 </span>
               </a>
               <a
