@@ -111,7 +111,7 @@ const Home: NextPage = () => {
                 className="group mb-2 flex items-center justify-between"
               >
                 <strong className="text-sm font-medium text-white group-hover:underline sm:text-base">
-                  SAHMRI
+                  SAHMRI Windows of Hope
                 </strong>
                 <span className="mx-2 flex-1 border-b border-dotted border-gray/50 sm:mx-4" />
                 <span className="mr-4 text-sm font-light text-gray">Web</span>
