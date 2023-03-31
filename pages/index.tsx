@@ -120,6 +120,21 @@ const Home: NextPage = () => {
                 </span>
               </a>
               <a
+                href="https://mangochutney.com.au/work/cancer-200"
+                target="_blank"
+                rel="noreferrer"
+                className="group mb-2 flex items-center justify-between"
+              >
+                <strong className="text-sm font-medium text-white group-hover:underline sm:text-base">
+                  Cancer 200
+                </strong>
+                <span className="mx-2 flex-1 border-b border-dotted border-gray/50 sm:mx-4" />
+                <span className="mr-4 text-sm font-light text-gray">App</span>
+                <span className="w-16 font-mono text-sm font-light text-gray-dark">
+                  2022
+                </span>
+              </a>
+              <a
                 href="https://store.steampowered.com/app/1849040/lure"
                 target="_blank"
                 rel="noreferrer"
