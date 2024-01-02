@@ -89,6 +89,16 @@ const Home: NextPage = () => {
               <h2 className="text-sm font-light text-gray-dark">Highlights</h2>
             </div>
             <div>
+              <span className="group mb-2 flex items-center justify-between">
+                <strong className="text-sm font-light text-white sm:text-base">
+                  Flinders Foundation
+                </strong>
+                <span className="mx-2 flex-1 border-b border-dotted border-gray/50 sm:mx-4" />
+                <span className="mr-4 text-sm font-light text-gray">Web</span>
+                <span className="w-16 font-mono text-sm font-light text-gray-dark">
+                  2023&ndash;
+                </span>
+              </span>
               <a
                 href="https://mangochutney.com.au/work/neura"
                 target="_blank"
